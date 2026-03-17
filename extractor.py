@@ -9,32 +9,34 @@ import pypandoc
 file = "/Users/kshiraj/Downloads/deterministic-resume-intelligence-main 2/data/sample/10089434.pdf"
 ext = os.path.splitext(file)[1].lower()
 
+open("output.txt", "w").close()
+
 # extracting text from pdf files 
 
 if ext == '.pdf':
     with pdfplumber.open(file) as pdf:
 
-        with open("output.txt","w",encoding="utf8") as text:
+        with open("output.txt","a",encoding="utf8") as text:
              
             for page in pdf.pages:
                 content = page.extract_text()   
 
                 if content:
-                    text.write(content)
+                    text.write(content + "\n")
                 tables = page.extract_tables()
 
                 for table in tables:
                     for row in table:
-                        row_text = " | ".join(str(cell) for cell in row if cell)
+                        row_text = " | ".join(str(cell) if cell else "" for cell in row)
                         text.write(row_text + "\n")
                 
                      
 # extracting data from a docx file
 
-if ext == '.docx':
+elif ext == '.docx':
     doc = Document(file)
 
-    with open("output.txt","w", encoding="utf8") as f:
+    with open("output.txt","a", encoding="utf8") as f:
         for para in doc.paragraphs:
             f.write(para.text + "\n")
 
@@ -46,14 +48,14 @@ if ext == '.docx':
 
 # extracting files from a doc file
 
-if ext == '.doc':
-    doc_file = file + "x"
+elif ext == '.doc':
+    doc_file = file.replace(".doc",".docx")
     
     pypandoc.convert_file(file,"docx",outputfile=doc_file)
 
     doc = Document(doc_file)
 
-    with open("output.txt","w", encoding="utf8") as f:
+    with open("output.txt","a", encoding="utf8") as f:
         for para in doc.paragraphs:
             f.write(para.text + "\n")
 
@@ -63,11 +65,16 @@ if ext == '.doc':
                 f.write(row_text + "\n")
 
 
+else:
+    print("Unsupported file type")
+
+
+
 # reading the extracted text from the 
 
 print("\n <--- Extracted text: ---> \n")
 
-with open("output.txt","r") as f:
+with open("output.txt","r", encoding="utf8") as f:
     data = f.readlines()
     for line in data:
         print(line)
