@@ -1,8 +1,9 @@
 sections = {
-    "skills": ["skills"],
+    "skills": ["skills", "technical skills"],
     "experience": ["experience"],
     "education": ["education"],
-    "certifications": ["certifications"]
+    "certifications": ["certifications"],
+    "projects": ["projects"]
 }
 
 def clean_line(line):
@@ -13,6 +14,7 @@ result = {"skills": [],
           "experience": [],
           "education": [],
           "certifications": [],
+          "projects": [],
         }
 with open ("output.txt","r") as f:
     data = f.readlines()

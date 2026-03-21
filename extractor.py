@@ -1,12 +1,14 @@
 import os
+import re
 import fitz
 import pdfplumber
 from docx import Document
 import pypandoc
+from cleaning import clean_text
 
 # getting the extension type of the file
 
-file = "/Users/kshiraj/Downloads/deterministic-resume-intelligence-main 2/data/sample/10089434.pdf"
+file = "/Users/kshiraj/Downloads/resumes2/ResumeDakshMaheshwari.pdf"
 ext = os.path.splitext(file)[1].lower()
 
 open("output.txt", "w").close()
@@ -14,21 +16,30 @@ open("output.txt", "w").close()
 # extracting text from pdf files 
 
 if ext == '.pdf':
-    with pdfplumber.open(file) as pdf:
-
+    try:
+        doc = fitz.open(file)
         with open("output.txt","a",encoding="utf8") as text:
-             
-            for page in pdf.pages:
-                content = page.extract_text()   
+            for page in doc:
+                raw_data = page.get_text("text")
+                if raw_data:
+                    clean_data = clean_text(raw_data)
+                    text.write(clean_data + "\n")
 
-                if content:
-                    text.write(content + "\n")
-                tables = page.extract_tables()
+    except:
+        with pdfplumber.open(file) as pdf:
+            with open("output.txt","a",encoding="utf8") as text:
+                
+                for page in pdf.pages:
+                    content = page.extract_text()   
 
-                for table in tables:
-                    for row in table:
-                        row_text = " | ".join(str(cell) if cell else "" for cell in row)
-                        text.write(row_text + "\n")
+                    if content:
+                        text.write(content + "\n")
+                    tables = page.extract_tables()
+
+                    for table in tables:
+                        for row in table:
+                            row_text = " | ".join(str(cell) if cell else "" for cell in row)
+                            text.write(row_text + "\n")
                 
                      
 # extracting data from a docx file
@@ -67,7 +78,6 @@ elif ext == '.doc':
 
 else:
     print("Unsupported file type")
-
 
 
 # reading the extracted text from the 
