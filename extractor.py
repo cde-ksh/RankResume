@@ -4,7 +4,7 @@ import fitz
 import pdfplumber
 from docx import Document
 import pypandoc
-from cleaning import clean_text
+from cleaning import clean_text, find_number
 
 # getting the extension type of the file
 
@@ -89,3 +89,5 @@ with open("output.txt","r", encoding="utf8") as f:
     for line in data:
         print(line)
 print("\n <--- Extraction Ended ---> \n")
+
+

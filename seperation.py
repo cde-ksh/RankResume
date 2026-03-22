@@ -1,21 +1,27 @@
+from cleaning import find_number
+
 sections = {
     "skills": ["skills", "technical skills"],
     "experience": ["experience"],
     "education": ["education"],
     "certifications": ["certifications"],
-    "projects": ["projects"]
+    "projects": ["projects"],
 }
 
 def clean_line(line):
     return line.strip().lower()
 
+
 current_sections = None
+
 result = {"skills": [],
           "experience": [],
           "education": [],
           "certifications": [],
           "projects": [],
         }
+
+
 with open ("output.txt","r") as f:
     data = f.readlines()
     for line in data:
@@ -26,7 +32,8 @@ with open ("output.txt","r") as f:
             if cleaned in keywords:
                 found_section = section
                 break
-        
+
+
         if found_section:
             current_sections = found_section
             print(current_sections)
@@ -44,3 +51,20 @@ with open("seperator.txt", "a", encoding="utf8") as f:
        f.write("\n".join(item)+"\n\n")
 
 f.close()
+
+
+# Phone-Number finding
+all_numbers  = []
+
+with open("output.txt", "r", encoding="utf8") as f:
+    for line in f:
+        nums = find_number(line)
+
+        if nums:
+            all_numbers.extend(nums)
+
+numbers = set(all_numbers)
+
+with open("seperator.txt", "a", encoding="utf8") as f:
+    for num in numbers:
+        f.write("Phone Number: " + num + "\n")

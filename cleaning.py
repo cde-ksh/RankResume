@@ -16,3 +16,8 @@ def clean_text(text):
     text = re.sub(r'\n+', '\n', text)
 
     return text.strip()
+
+
+
+def find_number(text):
+    return re.findall(r'\b[6-9]\d{9}\b', text)
