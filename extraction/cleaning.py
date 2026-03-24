@@ -6,6 +6,9 @@ def clean_text(text):
     # remove extra spaces
     text = re.sub(r' \t+', ' ', text)
 
+    # normalising the spaces
+    text = re.sub(r'\s+', " ", text).strip()
+
     # fixing Uppercase with spaces
     text = re.sub(r'(\b[A-Z])\s+(?=[A-Z]\b)', 'r\1', text)
 
@@ -22,7 +25,8 @@ def clean_text(text):
 
 
 
-
+def find_mail(text):
+    return re.findall(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+", text)
 
 def find_number(text):
     return re.findall(r'\b[6-9]\d{9}\b', text)

@@ -1,4 +1,4 @@
-from cleaning import find_number
+from cleaning import find_number, find_mail
 
 sections = {
     "skills": ["skills", "technical skills"],
@@ -54,17 +54,26 @@ f.close()
 
 
 # Phone-Number finding
+all_mails = []
 all_numbers  = []
 
 with open("output.txt", "r", encoding="utf8") as f:
     for line in f:
         nums = find_number(line)
+        email = find_mail(line)
 
         if nums:
             all_numbers.extend(nums)
+            all_mails.extend(email)
 
+mails = set(all_mails)
 numbers = set(all_numbers)
+
 
 with open("seperator.txt", "a", encoding="utf8") as f:
     for num in numbers:
+        f.write("<--- Contact Information --->" + "\n")
         f.write("Phone Number: " + num + "\n")
+    for email in mails:
+        f.write("Email: " + email + "\n")
+
