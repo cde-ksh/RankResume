@@ -12,10 +12,15 @@ def clean_text(text):
     # spaces before punchuation
     text = re.sub(r'\s+(,.)', r'\1', text)
 
+    # remove unicode 
+    text = re.sub(r'[^a-zA-Z0-9@.+\s-]', "", text)
+
     # normalising new lines
     text = re.sub(r'\n+', '\n', text)
 
     return text.strip()
+
+
 
 
 

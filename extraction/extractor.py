@@ -7,8 +7,8 @@ import pypandoc
 from cleaning import clean_text
 
 # getting the extension type of the file
-
-file = "/Users/kshiraj/Downloads/resumes2/ResumeDakshMaheshwari.pdf"
+ 
+file = "/Users/kshiraj/Downloads/resumes2/ResumeAryanSingh.pdf"
 ext = os.path.splitext(file)[1].lower()
 
 open("output.txt", "w").close()
