@@ -29,7 +29,7 @@ with open ("output.txt","r") as f:
 
         found_section = None
         for section, keywords in sections.items():
-            if cleaned in keywords:
+            if any(k in cleaned for k in keywords):
                 found_section = section
                 break
 
@@ -64,6 +64,7 @@ with open("output.txt", "r", encoding="utf8") as f:
 
         if nums:
             all_numbers.extend(nums)
+        if email:
             all_mails.extend(email)
 
 mails = set(all_mails)
@@ -71,8 +72,8 @@ numbers = set(all_numbers)
 
 
 with open("seperator.txt", "a", encoding="utf8") as f:
+    f.write("<--- Contact Information --->" + "\n")
     for num in numbers:
-        f.write("<--- Contact Information --->" + "\n")
         f.write("Phone Number: " + num + "\n")
     for email in mails:
         f.write("Email: " + email + "\n")
