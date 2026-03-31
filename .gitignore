@@ -6,3 +6,5 @@ resumes2/
 *.pdf
 *.docx
 .DS_Store
+test/
+venv/

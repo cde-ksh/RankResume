@@ -2,9 +2,13 @@ import ftfy
 import re
 import unicodedata
 
+
 def clean_text(text):
 
-    # unicode
+    # fixing brokin unicode 
+    text = ftfy.fix_text(text)
+
+    # unicode normalisation
     text = unicodedata.normalize("NFKD", text)
     text = text.encode('ascii','ignore').decode()
 
