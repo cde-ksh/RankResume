@@ -3,7 +3,7 @@ import fitz
 import pdfplumber
 from docx import Document
 import pypandoc
-from cleaning import clean_text
+from .cleaning import clean_text
 
 # getting the extension type of the file
  
