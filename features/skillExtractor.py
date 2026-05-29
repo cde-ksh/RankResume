@@ -11,7 +11,7 @@ file = "/Users/kshiraj/Downloads/resumes2/ResumeABHINAYAP.pdf"
 
 
 # <----- loading skill taxonomy ----->
-def load_skill_taxonomy(file_path = "skillTaxonomy.py"):
+def load_skill_taxonomy(file_path = "features/skillTaxonomy.txt"):
     with open(file_path, 'r', encoding='utf8') as f:
         lines = f.readlines()
         skills = []
@@ -27,7 +27,7 @@ matcher.add("SKILLS", patterns)
 
 # <----- extracting skills ----->
 def extract_skills(text):
-    text = extract_text(file)
+
     doc = nlp(text)
 
     matches = matcher(doc)
@@ -38,5 +38,7 @@ def extract_skills(text):
         found_skills.add(skill)
 
     return list(found_skills)
+
+print(extract_skills(extract_text(file)))
     
 

@@ -30,7 +30,7 @@ def clean_text(text):
     # normalising new lines
     text = re.sub(r'\n+', '\n', text)
 
-    return text.strip()
+    return text.strip().lower()
 
 
 

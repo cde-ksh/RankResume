@@ -1,0 +1,517 @@
+python
+python3
+py
+py3
+core python
+advanced python
+
+java
+core java
+advanced java
+java 8
+java 11
+
+javascript
+java script
+js
+vanilla js
+vanilla javascript
+
+typescript
+type script
+ts
+
+c
+ansi c
+c language
+
+c++
+cpp
+c plus plus
+modern c++
+
+c#
+c sharp
+dotnet c#
+
+go
+golang
+go lang
+
+rust
+rustlang
+
+kotlin
+kt
+
+swift
+swiftui
+
+php
+core php
+laravel php
+
+ruby
+ruby on rails
+rails
+
+scala
+scala lang
+
+r
+r language
+r stats
+
+matlab
+mat lab
+
+sql
+structured query language
+mysql sql
+
+mysql
+my sql
+
+postgresql
+postgres
+postgre sql
+
+sqlite
+sqlite3
+
+mongodb
+mongo db
+mongo
+
+redis
+redis cache
+
+firebase
+fire base
+
+supabase
+superbase
+
+html
+html5
+hypertext markup
+
+css
+css3
+cascading style sheets
+
+tailwind
+tailwind css
+tw css
+
+bootstrap
+bootstrap5
+bs5
+
+sass
+scss
+
+react
+reactjs
+react js
+react.js
+
+next.js
+nextjs
+next js
+next
+
+node.js
+nodejs
+node js
+node
+
+express
+expressjs
+express js
+
+angular
+angularjs
+angular js
+
+vue
+vuejs
+vue js
+
+svelte
+sveltekit
+svelte kit
+
+django
+django rest
+drf
+
+flask
+flask api
+
+fastapi
+fast api
+
+spring boot
+springboot
+spring
+
+hibernate
+jpa
+
+rest api
+restful api
+api development
+backend api
+
+graphql
+graph ql
+
+websocket
+web sockets
+socket io
+
+microservices
+micro services
+service architecture
+
+machine learning
+ml
+machine-learning
+
+deep learning
+dl
+deep-learning
+
+data science
+data sci
+
+data analysis
+data analytics
+analytics
+
+nlp
+natural language processing
+text processing
+
+computer vision
+cv
+image processing
+
+tensorflow
+tf
+tensor flow
+
+pytorch
+torch
+py torch
+
+scikit-learn
+scikit learn
+sklearn
+
+pandas
+pd library
+
+numpy
+np
+num py
+
+matplotlib
+plt
+
+seaborn
+sns
+
+opencv
+open cv
+cv2
+
+xgboost
+xgb
+
+lightgbm
+lgbm
+
+catboost
+cat boost
+
+keras
+keras api
+
+hugging face
+transformers
+hf
+
+llm
+large language models
+language models
+
+generative ai
+gen ai
+genai
+
+rag
+retrieval augmented generation
+
+vector db
+vector database
+faiss
+pinecone
+
+docker
+dockerized
+docker container
+
+kubernetes
+k8s
+kube
+
+jenkins
+ci cd
+ci/cd
+
+github actions
+git actions
+
+git
+git vcs
+version control
+
+github
+git hub
+
+gitlab
+git lab
+
+linux
+unix
+ubuntu
+
+bash
+shell scripting
+shell
+
+powershell
+power shell
+
+aws
+amazon web services
+aws cloud
+
+azure
+microsoft azure
+
+gcp
+google cloud
+google cloud platform
+
+terraform
+infra as code
+iac
+
+ansible
+config management
+
+nginx
+engine x
+
+apache
+apache server
+
+rabbitmq
+rabbit mq
+
+kafka
+apache kafka
+
+airflow
+apache airflow
+
+airbyte
+data ingestion
+
+spark
+apache spark
+pyspark
+
+hadoop
+big data
+
+snowflake
+snowflake db
+
+databricks
+dbricks
+
+etl
+elt
+data pipelines
+
+data warehousing
+data warehouse
+
+excel
+advanced excel
+spreadsheets
+
+power bi
+powerbi
+bi dashboards
+
+tableau
+tableau dashboards
+
+looker
+looker studio
+
+unit testing
+pytest
+junit
+
+tdd
+test driven development
+
+selenium
+automation testing
+ui testing
+
+playwright
+browser automation
+
+postman
+api testing
+
+jira
+agile tools
+
+agile
+scrum
+kanban
+
+system design
+hld
+lld
+
+data structures
+dsa
+data structure and algorithms
+
+algorithms
+algo
+problem solving
+
+oop
+oops
+object oriented programming
+
+operating systems
+os
+
+computer networks
+cn
+networking
+
+dbms
+database management
+
+oops concepts
+solid principles
+
+multithreading
+concurrency
+parallel programming
+
+socket programming
+network sockets
+
+oauth
+authentication
+authorization
+
+jwt
+json web token
+
+cyber security
+security
+app security
+
+penetration testing
+pentesting
+
+cryptography
+encryption
+
+blockchain
+web3
+smart contracts
+
+solidity
+ethereum solidity
+
+android development
+android
+android studio
+
+ios development
+ios
+xcode
+
+react native
+rn
+
+flutter
+dart flutter
+dart
+
+streamlit
+st app
+
+gradio
+gradio ui
+
+langchain
+lang chain
+
+llamaindex
+llama index
+
+prompt engineering
+ai prompting
+
+web scraping
+scraping
+beautifulsoup
+bs4
+
+selenium scraping
+crawler
+
+regex
+regular expressions
+
+json
+xml
+yaml
+
+api integration
+third party apis
+sdk integration
+
+payment gateway
+stripe
+razorpay
+
+puppeteer
+pdf automation
+browser rendering
+
+seo
+technical seo
+
+responsive design
+mobile first
+
+ui ux
+user interface
+user experience
