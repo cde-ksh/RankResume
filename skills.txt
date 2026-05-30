@@ -1,0 +1,20 @@
+[
+ sql
+ javascript
+ mongodb
+ github
+ python
+ react.js
+ git
+ c
+ tailwind
+ tailwind css
+ html
+ node.js
+ next.js
+ data structures
+ css
+ java
+ ml
+ algorithms
+]

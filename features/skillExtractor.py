@@ -34,7 +34,11 @@ def extract_skills(text):
     for _, start, end in matches:
         skill = doc[start:end].text.lower()
         found_skills.add(skill)
-
+    
     return list(found_skills)
 
-print(extract_skills(text))
+with open("skills.txt", "w", encoding="utf8") as f:
+    f.write("[\n")
+    for line in extract_skills(text):
+        f.write(f" {line}\n")
+    f.write("]\n")
