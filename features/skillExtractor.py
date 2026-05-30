@@ -1,0 +1,40 @@
+import spacy
+from spacy.matcher import PhraseMatcher
+from extraction.extractor import extract_text
+
+# spacy
+nlp = spacy.load("en_core_web_sm")
+matcher = PhraseMatcher(nlp.vocab, attr="LOWER")
+
+# <----- loading skill taxonomy ----->
+def load_skill_taxonomy(file_path = "features/skillTaxonomy.txt"):
+    with open(file_path, 'r', encoding='utf8') as f:
+        lines = f.readlines()
+        skills = []
+        for line in lines:
+            skills.append(line.strip())
+        return skills
+
+skills = load_skill_taxonomy()
+patterns = [nlp.make_doc(skill) for skill in skills]
+matcher.add("SKILLS", patterns)
+
+
+# <----- extracting skills ----->
+with open("seperator.txt", "r", encoding="utf8") as f:
+    text = f.read()
+
+def extract_skills(text):
+
+    doc = nlp(text)
+
+    matches = matcher(doc)
+
+    found_skills = set()
+    for _, start, end in matches:
+        skill = doc[start:end].text.lower()
+        found_skills.add(skill)
+
+    return list(found_skills)
+
+print(extract_skills(text))
